@@ -8,7 +8,9 @@ export default (req) => {
     const axiosInstance = axios.create({
         baseURL : 'http://react-ssr-api.herokuapp.com',
         headers : { cookie : req.get('cookie') || '' }
-    })
+    });
+
+    console.log('api = ', axiosInstance);
 
     const store = createStore(reducers, {}, composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance))));
     

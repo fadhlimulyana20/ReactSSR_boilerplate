@@ -5,10 +5,10 @@ import Routes from '../client/Routes';
 import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 
-export default (req, store) => {
+export default (req, store, context) => {
     const content = renderToString(
         <Provider store={store}>
-            <StaticRouter context={{}} location={req.path}>
+            <StaticRouter context={context} location={req.path}>
                 {/* <Routes /> */}
                 <div> {renderRoutes(Routes)} </div>
             </StaticRouter>
@@ -18,7 +18,7 @@ export default (req, store) => {
     return `
         <html>
             <head>
-                <link rel="shortcut icon" href="/assets/images/react.svg" />
+                <link rel="shortcut icon" href="/assets/images/react.svg"/>
             </head>
             <body>
                 <div id="root">${content}</div>

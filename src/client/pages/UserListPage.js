@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../actions/index';
-import { Container } from 'react-bootstrap';
+// import { Container } from 'react-bootstrap';
 
 class userListPage extends Component {
     componentDidMount(){
@@ -19,12 +19,12 @@ class userListPage extends Component {
         });
         return (  
             <React.Fragment>
-                <Container className="py-5">
+                <div className="container py-5">
                     <h1>List of User : </h1>
                     <ul>
                         {user_list}
                     </ul>
-                </Container>
+                </div>
             </React.Fragment>
         );
     }

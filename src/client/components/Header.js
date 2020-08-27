@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Navbar } from 'react-bootstrap';
+// import { Navbar } from 'react-bootstrap';
 import react from '../../../assets/images/react.svg';
 
 const Header = ({ auth }) => {
@@ -14,31 +14,31 @@ const Header = ({ auth }) => {
     );
 
     return (
-        <Navbar bg="dark" variant="dark">
-            <Link to="/">
-                <Navbar.Brand>
-                    <img
-                        alt=""
-                        src={react}
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{' '}
-                    React SSR
-                </Navbar.Brand>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <Link to="/" className="navbar-brand">
+                <img
+                    alt=""
+                    src={react}
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                />{' '}
+                React SSR
             </Link>
-            <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <Link className="nav-link" to="/users">Users</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link className="nav-link" to="/admins">Admins</Link>
-                </li>
-                <li className="nav-item">
-                    {authButton}
-                </li>
-            </ul>
-        </Navbar>
+            <div className="collapse navbar-collapse">
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/users">Users</Link>
+                    </li>
+                    <li className="navbar-item">
+                        <Link className="nav-link" to="/admins">Admins</Link>
+                    </li>
+                    <li className="nav-item">
+                        {authButton}
+                    </li>
+                </ul>
+            </div>
+        </nav>
     )
 }
 

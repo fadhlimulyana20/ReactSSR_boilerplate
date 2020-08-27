@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import App from './App';
 import HomePage from './pages/HomePage';
 import UserListPage from './pages/UserListPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 // export default () => {
 //     return (
@@ -26,6 +27,9 @@ export default [
             {
                 ...UserListPage,
                 path : '/users',
+            },
+            {
+                ...NotFoundPage
             }
         ]
     }
