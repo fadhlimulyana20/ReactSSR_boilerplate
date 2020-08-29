@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../actions/index';
 // import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 class userListPage extends Component {
     componentDidMount(){
@@ -9,6 +10,14 @@ class userListPage extends Component {
         console.log('ok');
     }
 
+    head = () => {
+        return (
+            <Helmet>
+                <title>{ `${this.props.users.length} Users Loaded` }</title>
+                <meta property="og:title" content="User List Page" />   
+            </Helmet>
+        )
+    }
 
     render() { 
         const { users } = this.props;
@@ -19,6 +28,7 @@ class userListPage extends Component {
         });
         return (  
             <React.Fragment>
+                { this.head() }
                 <div className="container py-5">
                     <h1>List of User : </h1>
                     <ul>

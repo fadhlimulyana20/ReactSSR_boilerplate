@@ -10,7 +10,7 @@ export default (req) => {
         headers : { cookie : req.get('cookie') || '' }
     });
 
-    console.log('api = ', axiosInstance);
+    // console.log('api = ', axiosInstance);
 
     const store = createStore(reducers, {}, composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance))));
     

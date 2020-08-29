@@ -19,10 +19,12 @@ module.exports = {
                 options : {
                     presets : [
                         '@babel/preset-react',
-                        ['@babel/preset-env', {targets : { browsers : ['last 2 versions'] }}]
+                        ['@babel/preset-env', {targets : { browsers : ['last 2 versions']}}]
                     ],
                     plugins : [
-                        "@babel/plugin-proposal-class-properties"
+                        "@babel/plugin-proposal-class-properties",
+                        // "@babel/plugin-transform-regenerator",
+                        // "@babel/plugin-transform-runtime"
                     ]
                 }
             },
