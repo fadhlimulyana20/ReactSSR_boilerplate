@@ -4,6 +4,7 @@ import App from './App';
 import HomePage from './pages/HomePage';
 import UserListPage from './pages/UserListPage';
 import NotFoundPage from './pages/NotFoundPage';
+import AdminListPage from './pages/AdminListPage';
 
 // export default () => {
 //     return (
@@ -27,6 +28,10 @@ export default [
             {
                 ...UserListPage,
                 path : '/users',
+            },
+            {
+                ...AdminListPage,
+                path : '/admins'
             },
             {
                 ...NotFoundPage

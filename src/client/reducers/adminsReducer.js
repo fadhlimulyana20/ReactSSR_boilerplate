@@ -8,3 +8,5 @@ const adminsReducer = (state = [], action) => {
             return state;
     }
 }
+
+export default adminsReducer;
